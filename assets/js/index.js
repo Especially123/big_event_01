@@ -47,7 +47,7 @@ function getUserInof() {
             if (res.status !== 0) {
                 return layui.layer.msg(res.message, { icon: 5 });
             }
-            console.log(res.data);
+            // console.log(res.data);
             // 调用头像渲染
             renderAvatar(res.data)
         }
