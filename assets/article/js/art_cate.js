@@ -71,14 +71,15 @@ $(function () {
         // 发送请求
         $.ajax({
             type: 'get',
-            url: '/my/article/cates/' + Id,
+            url: '/my/article/getCatesById/' + '?id=' + Id,
             success: (res) => {
                 // console.log(res);
                 if (res.status != 0) {
                     return layer.msg(res.message);
                 }
                 // 渲染
-                form.val('form-edit', res.data);
+                // console.log(res);
+                form.val('form-edit', res.data[0]);
             }
         })
         // 提交修改
@@ -107,12 +108,13 @@ $(function () {
         // 获取自定义id
         let Id = $(this).attr('data-id');
         // alert(Id)
+        // return
         //提示
         layer.confirm('确定要删除吗？', { icon: 3, title: '提示' }, function (index) {
             // 发送请求
             $.ajax({
                 type: 'get',
-                url: '/my/article/deletecate/' + Id,
+                url: '/my/article/deletecate/' + '?id=' + Id,
                 success: (res) => {
                     // console.log(res);
                     if (res.status != 0) {

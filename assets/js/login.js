@@ -72,6 +72,7 @@ $(function () {
             url: '/api/login',
             data: $(this).serialize(),
             success: (res) => {
+                console.log(res);
                 if (res.status != 0) {
                     return layer.msg(res.message, { icon: 5 });
                 }

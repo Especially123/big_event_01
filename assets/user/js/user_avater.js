@@ -47,8 +47,8 @@ $(window).on('load', function () {
         // 发送请求
         $.ajax({
             type: 'post',
-            url: '/my/update/avatar',
-            data: { avatar: dataURL },
+            url: '/my/userinfo',
+            data: { userPic: dataURL },
             success: (res) => {
                 // console.log(res);
                 if (res.status != 0) {
@@ -58,9 +58,45 @@ $(window).on('load', function () {
                 window.parent.getUserInof();
             }
         })
-
-
     })
+    /*  $('#btnChooseImage').on('click', function () {
+         $('#file').click();
+     })
+     $('#file').change(function (e) {
+         let file = e.target.files[0];
+         // console.log(file);
+         if (!file) {
+             return alert('选择个头像呗')
+         }
+         let fn = new FormData();
+         fn.append('file_data', file)
+         $.ajax({
+             type: 'post',
+             url: '/my/uploadpic',
+             data: fn,
+             processData: false,
+             contentType: false,
+             success: (res) => {
+                 // console.log(res);
+                 const { status, src } = res;
+                 // return console.log(status, src);
+                 if (status != 1) {
+                     $.ajax({
+                         type: 'post',
+                         url: '/my/userinfo',
+                         data: {
+                             userPic: src
+                         },
+                         success: (res) => {
+                             // console.log(res);
+                             alert("上传成功")
+                             window.parent.getUserInof();
+                         }
+                     })
+                 }
+             }
+         })
+     }) */
 
 })
 

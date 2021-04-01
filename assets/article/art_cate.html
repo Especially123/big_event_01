@@ -53,10 +53,10 @@
         {{ each list }}
         <tr>
             <td>{{ $value.name }}</td>
-            <td>{{ $value.alias }}</td>
+            <td>{{ $value.slug }}</td>
             <td>
-                <button type="button" class="layui-btn layui-btn-xs btn-edit" data-id="{{ $value.Id }}">编辑</button>
-                <button type="button" class="layui-btn layui-btn-xs layui-btn-danger btn-delete" data-id="{{ $value.Id }}">删除</button>
+                <button type="button" class="layui-btn layui-btn-xs btn-edit" data-id="{{ $value.id }}">编辑</button>
+                <button type="button" class="layui-btn layui-btn-xs layui-btn-danger btn-delete" data-id="{{ $value.id }}">删除</button>
             </td>
         </tr>
         {{ /each }}
@@ -75,7 +75,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">分类别名</label>
                 <div class="layui-input-block">
-                  <input type="text" name="alias" required  lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+                  <input type="text" name="slug" required  lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
                 </div>
               </div>
               <!-- 添加按钮 -->
@@ -91,7 +91,7 @@
     <script type="text/html" id="edit">
         <form class="layui-form" lay-filter="form-edit" id="form-edit">
             <!-- 隐藏域 存放id -->
-            <input type="hidden"  name="Id">
+            <input type="hidden"  name="id">
             <!-- 分类名称 -->
             <div class="layui-form-item">
               <label class="layui-form-label">分类名称</label>
@@ -103,7 +103,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">分类别名</label>
                 <div class="layui-input-block">
-                  <input type="text" name="alias" required  lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+                  <input type="text" name="slug" required  lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
                 </div>
               </div>
               <!-- 添加按钮 -->

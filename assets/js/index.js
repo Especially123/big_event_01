@@ -26,10 +26,10 @@ function getUserInof() {
     $.ajax({
         type: 'get',
         url: '/my/userinfo',
-        // headers: {
-        //     // 重新登录 token过期事件12个小时
-        //     Authorization: localStorage.getItem('token') || ""
-        // },
+        headers: {
+            // 重新登录 token过期事件12个小时
+            Authorization: localStorage.getItem('token') || ""
+        },
         // 身份拦截
         // complete: function (res) {
         //     // console.log(res.responseJSON);
@@ -61,13 +61,13 @@ function renderAvatar(user) {
     $('#welcome').html('欢迎&nbsp;&nbsp;' + name)
     // 判定 有头像渲染头像  没有渲染文字头像
 
-    if (user.user_pic == null) {
+    if (user.userPic == null) {
         $('.text-avatar').show().html(name[0].toUpperCase());
         $('.layui-nav-img').hide()
 
     } else {
 
-        $('.layui-nav-img').show().attr('src', user.user_pic);
+        $('.layui-nav-img').show().attr('src', user.userPic);
         $('.text-avatar').hide();
 
     }

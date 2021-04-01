@@ -1,7 +1,8 @@
 $(function () {
     // console.log(1);
     // 开发环境服务配置
-    let baseURL = 'http://api-breakingnews-web.itheima.net';
+    // let baseURL = 'http://api-breakingnews-web.itheima.net';
+    let baseURL = 'http://127.0.0.1:2020';
     // 测试环境服务配置
     // let baseURL = 'http://api-breakingnews-web.itheima.net';
     // 生产环境服务配置
@@ -18,7 +19,7 @@ $(function () {
         if (options.url.indexOf('/my/') != -1) {
             // 重新登录 token过期事件12个小时
 
-            options.headers = { Authorization: localStorage.getItem('token') || "" }
+            options.headers = { Authorization: 'Bearer ' + localStorage.getItem('token') || "" }
             //身份拦截
             options.complete = function (res) {
                 // console.log(res.responseJSON);
